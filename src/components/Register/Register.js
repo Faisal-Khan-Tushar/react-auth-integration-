@@ -12,7 +12,7 @@ const Register = () => {
         <br/>
         <input type="submit" value="Register" />
       </form>
-      <Link path="/login">Already Registered?</Link>
+      <Link to="/login">Already Registered?</Link>
     </div>
   );
 };
