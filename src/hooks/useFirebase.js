@@ -1,6 +1,6 @@
 import { useState } from "react"
 import initializeAuthentication from "../Firebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged} from "firebase/auth";
 //machine ta use korar age toh machine take chalano lagbe.
 initializeAuthentication();
 const useFirebase=()=>{
@@ -18,6 +18,12 @@ const googleProvider = new GoogleAuthProvider();
     setError(error.message);
   })
   }
+  onAuthStateChanged(auth,user=>{
+    if(user){
+      console.log('inside the state change',user);
+      setUser(user);
+    }
+  })
   return {
     user,
     error,
