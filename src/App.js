@@ -4,11 +4,13 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Header from './components/Header/Header';
+import AuthProvider from './conext/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
+<AuthProvider>
+<BrowserRouter>
      <Header/>
      <Switch>
     <Route path="/home">
@@ -25,6 +27,7 @@ function App() {
  </Route>
      </Switch>
      </BrowserRouter>
+</AuthProvider>
     </div>
   );
 }
